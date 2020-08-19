@@ -5,7 +5,7 @@ const goods = [
   { title: "Shoes", price: 250 },
 ];
 
-const renderGoodsItem = (title, price) => {
+const renderGoodsItem = (title = "Товар", price = 100) => {
   return /*html*/ `
   <div class="section goods-item">
         <div class="item">
@@ -45,11 +45,11 @@ const renderGoodsItem = (title, price) => {
     `;
 };
 
-const renderGoodsList = (list) => {
+const renderGoodsList = (list = goods) => {
   let goodsList = list.map((item) => renderGoodsItem(item.title, item.price));
   document.querySelector(".main").innerHTML = goodsList;
 };
 
 window.onload = () => {
-  renderGoodsList(goods);
+  renderGoodsList();
 };
