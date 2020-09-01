@@ -1,18 +1,20 @@
 class Basket {
     constructor(user, items = []) {
         this.user = user;
-        this.created = new Date()
+        this.created = new Date();
+        this.items = items;
     }
-
-    updated: null;
 
     add(item) {
-        item.push(item);
+        this.items.push(item);
     }
 
-    // исключительно фантазии на тему, а не работчий код. Хотя не исключено, что будет работать =)
     remove(item) {
-        this.items = this.items.filter(value => value.name !== item.name)
+        this.items = this.items.filter(value => value.name !== item.name);
+    }
+
+    getItemList() {
+        return this.items
     }
 }
 
