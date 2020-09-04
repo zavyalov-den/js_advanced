@@ -59,24 +59,38 @@ class GoodsItem {
 class GoodsList {
     constructor() {
         this.goods = [];
+        this.filteredGoods = [];
     }
 
     fetchGoods() {
         makeRequest('GET', `${API_URL}/catalogData.json`)
             .then(data => {
-                    this.goods = JSON.parse(data)
-                    this.render()
+                    this.goods = JSON.parse(data);
+                    this.filteredGoods = JSON.parse(data);
+                    this.render();
                 }
             )
     }
 
+    filterGoods(value) {
+        const re = new RegExp(value, 'i');
+        this.filteredGoods = this.goods.filter(item =>
+        re.test(item.product_name));
+        this.render()
+    }
+
+    handleFiltering() {
+        let value = document.querySelector('.search > input').value
+        this.filterGoods(value)
+    }
+
     getTotalCost() {
-        return this.goods.reduce((sum, {price}) => (sum + price), 0);
+        return this.filteredGoods.reduce((sum, {price}) => (sum + price), 0);
     }
 
     render() {
         let listHtml = '';
-        this.goods.forEach(({product_name, price}) => {
+        this.filteredGoods.forEach(({product_name, price}) => {
             const goodItem = new GoodsItem(product_name, price);
             listHtml += goodItem.render();
         });
@@ -113,10 +127,8 @@ const makeRequest = (method, url, callback) => {
 }
 
 
-window.onload = () => {
     const list = new GoodsList();
     list.fetchGoods()
     console.log(list.getTotalCost())
-}
 
 

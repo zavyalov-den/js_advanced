@@ -7,7 +7,7 @@
     Главная
   </title>
   <link rel="stylesheet" href="./css/style.css">
-  <script src="./main.js"></script>
+  <script src="./feedback.js"></script>
 </head>
 <body>
 
@@ -23,10 +23,10 @@
         <li class="">
           <a href="./index.html">Главная</a>
         </li>
-        <li class="active">
+        <li class="">
           <a href="./catalog.html">Каталог</a>
         </li>
-        <li class="">
+        <li class=" active">
           <a href="./contacts.html">Контакты</a>
         </li>
 
@@ -39,12 +39,14 @@
     </div>
     <div class="menu user">
       <ul>
-        <li class="search"><input type="text" placeholder="Поиск"><button id="search" onclick="list.handleFiltering()">Искать</button></li>
+        <li class="search"><input type="text" placeholder="Поиск">
+          <button id="search" onclick="list.handleFiltering()">Искать</button>
+        </li>
 
-<!--        <li class="user"><a href="/auth/login/">Войти</a></li>-->
+        <!--        <li class="user"><a href="/auth/login/">Войти</a></li>-->
 
 
-<!--        <li class="user"><a href="/auth/register/">Регистрация</a></li>-->
+        <!--        <li class="user"><a href="/auth/register/">Регистрация</a></li>-->
 
 
       </ul>
@@ -54,6 +56,22 @@
   <div class="main">
     <div class="section categories">
 
+      <div class="section feedback">
+        <!--        <form action="" class="feedback">-->
+        <label class="feedback" for="name">Имя</label><br>
+        <input type="text" id="name"><br>
+        <label class="feedback" for="phone">Телефон</label><br>
+        <input type="text" id="phone">
+        <br>
+        <label class="feedback" for="mail">E-mail</label><br>
+        <input type="text" id="mail">
+        <br>
+        <label class="feedback" for="message">Сообщение</label> <br>
+        <textarea type="text" id="message"></textarea>
+        <br>
+        <button onclick="handleSend()">Отправить</button>
+        <!--        </form>-->
+      </div>
       <!-- <div class="section banner">
           <h1>Stuff!</h1>
           <h6>Пожалуй лучший товар в мире.</h6>
