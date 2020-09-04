@@ -7,11 +7,12 @@
     Главная
   </title>
   <link rel="stylesheet" href="./css/style.css">
-  <script src="./main.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script defer src="./vue_main.js"></script>
 </head>
 <body>
 
-<div class="container">
+<div class="container" id="app">
 
   <div class="header">
     <div class="logo">
@@ -39,33 +40,61 @@
     </div>
     <div class="menu user">
       <ul>
-        <li class="search"><input type="text" placeholder="Поиск"><button id="search" onclick="list.handleFiltering()">Искать</button></li>
-
-<!--        <li class="user"><a href="/auth/login/">Войти</a></li>-->
-
-
-<!--        <li class="user"><a href="/auth/register/">Регистрация</a></li>-->
-
-
+        <li class="search"><input v-model="inputText" type="text" placeholder="Поиск">
+          <button id="search">Искать</button>
+        </li>
       </ul>
     </div>
   </div>
 
   <div class="main">
-    <div class="section categories">
+    <div v-if="!filteredGoods.length" class="section">
+      <h3>Нет данных для отображения</h3>
 
-      <!-- <div class="section banner">
-          <h1>Stuff!</h1>
-          <h6>Пожалуй лучший товар в мире.</h6>
-          <span>Page is under construction...</span>
+    </div>
 
-      </div> -->
+    <div v-for="item in filteredGoods" :key="item.id_product" class="section goods-item">
+      <div class="item">
+        <div class="image">
+
+        </div>
+
+        <div class="text">
+
+          <h4>Описание: </h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur assumenda deserunt
+            dicta
+            incidunt ipsam laborum porro sed sunt ullam! Ad amet assumenda commodi consequatur dolores
+            eligendi fugiat minus, necessitatibus obcaecati, odit officia perspiciatis porro quos
+            voluptas
+            voluptate! Aperiam assumenda deleniti eum fugit id in, odit optio quaerat totam
+            veritatis.</p>
+        </div>
+        <div class="buy-block">
+          <div class="discount"><span>-66.6%</span></div>
+          <div class="bestsell"><span>Надо брать!</span></div>
+          <br>
+          <span class="name"><a
+              href="#">{{item.product_name}}</a></span><br>
+          <div class="price">
+            <span class="price"> {{item.price}}  &#8381;</span>
+
+            <span class="old-price"> {{item.price * 3}} &#8381;</span>
+
+            <br>
+            <button class="buy"><a href="#">Добавить товар</a></button>
+          </div>
+
+        </div>
+      </div>
     </div>
 
   </div>
   <div class="footer">
     <span>&copy; Zavyalov Den 2020</span>
   </div>
+
+</div>
 </div>
 
 
