@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>
+    Главная
+  </title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./feedback.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <div class="logo">
+      <span>Stuff!</span><br>
+      <p>Мы продаем товар!</p>
+    </div>
+    <div class="menu">
+      <ul>
+        <li class="">
+          <a href="./index.html">Главная</a>
+        </li>
+        <li class="">
+          <a href="./catalog.html">Каталог</a>
+        </li>
+        <li class=" active">
+          <a href="./contacts.html">Контакты</a>
+        </li>
+
+        <li class="">
+          <a href="/basket/">
+
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="menu user">
+      <ul>
+        <li class="search"><input type="text" placeholder="Поиск">
+          <button id="search" onclick="list.handleFiltering()">Искать</button>
+        </li>
+
+        <!--        <li class="user"><a href="/auth/login/">Войти</a></li>-->
+
+
+        <!--        <li class="user"><a href="/auth/register/">Регистрация</a></li>-->
+
+
+      </ul>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="section categories">
+
+      <div class="section feedback">
+        <!--        <form action="" class="feedback">-->
+        <label class="feedback" for="name">Имя</label><br>
+        <input type="text" id="name"><br>
+        <label class="feedback" for="phone">Телефон</label><br>
+        <input type="text" id="phone">
+        <br>
+        <label class="feedback" for="mail">E-mail</label><br>
+        <input type="text" id="mail">
+        <br>
+        <label class="feedback" for="message">Сообщение</label> <br>
+        <textarea type="text" id="message"></textarea>
+        <br>
+        <button onclick="handleSend()">Отправить</button>
+        <!--        </form>-->
+      </div>
+      <!-- <div class="section banner">
+          <h1>Stuff!</h1>
+          <h6>Пожалуй лучший товар в мире.</h6>
+          <span>Page is under construction...</span>
+
+      </div> -->
+    </div>
+
+  </div>
+  <div class="footer">
+    <span>&copy; Zavyalov Den 2020</span>
+  </div>
+</div>
+
+
+</div>
+</body>
+</html>
