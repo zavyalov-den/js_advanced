@@ -40,7 +40,7 @@
     </div>
     <div class="menu user">
       <ul>
-        <li class="search"><input v-model="inputText" type="text" @input="handleFiltering()" placeholder="Поиск">
+        <li class="search"><input v-model="inputText" type="text" placeholder="Поиск">
           <button id="search">Искать</button>
         </li>
       </ul>
@@ -48,6 +48,10 @@
   </div>
 
   <div class="main">
+    <div v-if="!filteredGoods.length" class="section">
+      <h3>Нет данных для отображения</h3>
+
+    </div>
 
     <div v-for="item in filteredGoods" :key="item.id_product" class="section goods-item">
       <div class="item">
