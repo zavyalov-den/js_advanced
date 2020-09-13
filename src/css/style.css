@@ -1,0 +1,430 @@
+body,
+html {
+    margin: 0;
+    background-color: #333;
+}
+
+.container {
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+    margin: 0 auto;
+    height: 100%;
+    width: 1200px;
+    background-color: #ccc;
+    color: #444;
+}
+
+.main > *,
+.header > *,
+.footer > * {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.header {
+    display: flex;
+    overflow: auto;
+    /*padding-right: 0;*/
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    float: left;
+    font-size: 2rem;
+    text-align: center;
+    padding-right: 0;
+}
+
+.logo p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.menu {
+    display: flex;
+    float: right;
+    /*padding-right: 10px;*/
+    /*padding-left: 10px;*/
+}
+
+li.user {
+    /*height: 50%;*/
+}
+
+.menu ul {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li:not([class^="user"]):hover {
+    background-color: #666;
+}
+
+li.user:hover {
+    background-color: #666;
+    color: #666;
+}
+
+.user a {
+    font-size: 0.9rem;
+}
+
+.menu a {
+    color: #444;
+}
+
+.menu li:hover a {
+    color: #ccc;
+}
+
+.menu ul li {
+    display: inline-block;
+    /*height: 100%;*/
+    padding: 20px 10px 20px 10px;
+    font-size: 1.2rem;
+}
+
+.section {
+    display: block;
+    overflow: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /*height: 500px;*/
+}
+
+.section:nth-child(even) {
+    background-color: #ccc;
+}
+
+.item {
+    display: flex;
+}
+
+.banner {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.banner h1 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    letter-spacing: 33px;
+}
+
+.banner h6 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+.categories {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.categories li:hover {
+    /*font-weight: bolder;*/
+    background-color: inherit;
+}
+
+.categories li:hover a {
+    color: #000;
+}
+
+.section:nth-child(odd) {
+    background-color: #bbb;
+}
+
+.active {
+    background-color: #bbb;
+}
+
+.categories > .menu li.active {
+    background-color: #999;
+}
+
+.categories > .menu li.active a {
+    color: #ccc;
+}
+
+.image {
+    background-image: url("../assets/box.png");
+    background-size: 100% 100%;
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+    min-width: 250px;
+    /*outline: #444444 solid;*/
+}
+
+.map {
+    background-image: url("../assets/map.png");
+    background-size: 100%;
+    height: 145px;
+}
+
+.section:nth-child(odd) .image {
+    float: left;
+    margin-right: 50px;
+}
+
+.section:nth-child(even) .image {
+    float: right;
+    margin-left: 50px;
+}
+
+.section:nth-child(even) .item {
+    flex-direction: row-reverse;
+}
+
+.basket-item {
+    display: flex;
+    max-width: 50%;
+    padding: 5px;
+    /*align-content: space-between;*/
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+}
+
+.basket-item:hover {
+    background-color: #ccc;
+}
+
+.basket-item > div {
+    /*display: inline-block;*/
+    margin: 10px;
+    min-width: 50px;
+}
+
+/*.section:nth-child(odd) .text {*/
+/*    float: right;*/
+/*}*/
+.text {
+    /*display: inline-block;*/
+    margin-right: 50px;
+}
+
+.text h4 {
+    margin-top: 0;
+}
+
+.buy-block {
+    min-width: 300px;
+}
+
+.section:nth-child(odd) .buy-block {
+    float: right;
+}
+
+.section:nth-child(even) .buy-block {
+    float: left;
+}
+
+/*.text {*/
+/*    margin-left: 20px;*/
+/*    margin-right: 20px;*/
+/*}*/
+
+.footer {
+    display: block;
+    overflow: auto;
+    padding: 20px;
+}
+
+.footer span {
+    float: right;
+}
+
+.name {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.text p {
+    font-size: 1rem;
+}
+
+.buy {
+    font-size: 1.5rem;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #666;
+    background-color: #ccc;
+}
+
+.buy a {
+    color: #666;
+}
+
+.buy:hover {
+    background-color: #666;
+}
+
+.buy:hover a {
+    color: #ccc;
+}
+
+/*.buy:active {*/
+/*    border: none;*/
+/*}*/
+
+.price {
+    font-size: 2rem;
+    /*text-align: right;*/
+}
+
+.old-price {
+    font-size: 1.5rem;
+    color: #666666;
+    text-decoration: line-through;
+}
+
+.discount {
+    font-size: 1.5rem;
+    padding: 5px;
+    color: #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: #666;
+}
+
+.bestsell {
+    font-size: 1.5rem;
+    padding: 5px;
+    color: #666;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: #ccc;
+    border: 1px solid #666;
+}
+
+.item-delete a {
+    color: #777;
+    font-size: 0.8rem;
+}
+
+.item-delete a:hover {
+    text-decoration: underline;
+}
+
+/*.item-quantity {*/
+/*    margin: 0;*/
+/*}*/
+.item-quantity-control span:hover {
+    /*text-decoration: ;*/
+    color: black;
+}
+
+.id {
+    display: none;
+}
+
+.userpic {
+    width: 150px;
+    height: 150px;
+    margin-right: 50px;
+    /*float: left;*/
+}
+
+.user-item {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.user-item h6 {
+    margin-top: 0;
+}
+
+.admin-buttons button {
+    padding: 15px;
+    width: 150px;
+    margin-left: 50px;
+    z-index: 2;
+}
+
+.user_inactive {
+    position: absolute;
+    font-size: 7rem;
+    letter-spacing: 35px;
+    opacity: 0.2;
+    margin-left: 200px;
+    /*z-index: -1;*/
+    user-select: none;
+    pointer-events: none;
+}
+
+.form-control {
+    margin-top: 15px;
+}
+
+.item-detailed {
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    color: #444;
+}
+
+a:visited {
+    color: #444444;
+}
+
+.paginator {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/*.item-detailed .buy-block {*/
+/*    float: right;*/
+/*}*/
+
+.itempic {
+    height: 250px;
+    width: 250px;
+}
+
+/*label.feedback {*/
+/*    display: inline-block;*/
+/*    width: 100px;*/
+/*}*/
+
+/*form > input, textarea {*/
+/*    !*margin: 10px;*!*/
+/*    margin-top: 3px;*/
+/*    margin-bottom: 6px;*/
+/*    padding: 5px;*/
+/*    width: 300px;*/
+/*}*/
+
+input, textarea {
+    /*margin: 10px;*/
+    margin-top: 3px;
+    margin-bottom: 6px;
+    padding: 5px;
+    width: 300px;
+}
+
+textarea {
+    height: 100px;
+}
+
+#errorMsg {
+    margin-top: 20px;
+    border: 2px solid red;
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
