@@ -4,12 +4,14 @@ const app = new Vue({
         API_URL: 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses',
         goods: [],
         filteredGoods: [],
-        inputText: ''
+        basketItems: [],
+        bKey: 0
+        // inputText: ''
     },
     watch: {
-        inputText(val) {
-            this.handleFiltering()
-        }
+        // inputText(val) {
+        //     this.filterGoods()
+        // }
     },
     methods: {
         fetchGoods() {
@@ -17,7 +19,6 @@ const app = new Vue({
                 .then(data => {
                         this.goods = JSON.parse(data);
                         this.filteredGoods = JSON.parse(data);
-                        // this.render();
                     }
                 )
         },
@@ -25,10 +26,6 @@ const app = new Vue({
             const re = new RegExp(value, 'i');
             this.filteredGoods = this.goods.filter(item =>
                 re.test(item.product_name));
-        },
-        handleFiltering() {
-            console.log(this.inputText)
-            this.filterGoods(this.inputText)
         },
         getTotalCost() {
             return this.filteredGoods.reduce((sum, {price}) => (sum + price), 0);
@@ -59,6 +56,22 @@ const app = new Vue({
                 }
                 xhr.send();
             })
+        },
+        basketAdd(item) {
+            exists = false
+            for (const i of this.basketItems) {
+                if (item.id_product === i.id_product) {
+                    i.quantity++
+                    exists = true
+                    // да костыль, но иначе компонент не обновляется,если меняются объекты внутри массива, а не сам
+                    // массив. Возможно я делаю что-то не так)
+                    this.bKey++
+                }
+            }
+            if (!exists) {
+                item.quantity = 1
+                this.basketItems.push(item)
+            }
         }
     },
     mounted() {
